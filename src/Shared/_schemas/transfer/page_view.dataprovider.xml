@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<DataProviders
+        xmlns="xervice:dataprovider-01"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="xervice:dataprovider-01 ../../../vendor/xervice/data-provider/dataprovider.schema.xsd"
+>
+
+    <DataProvider name="PageView">
+        <DataElement name="name" type="string"/>
+        <DataElement name="header" type="Header"/>
+        <DataElement name="navigation" type="Navigation"/>
+        <DataElement name="mastHead" type="MastHead"/>
+        <DataElement name="sections" type="Section[]" singleton="Section"/>
+    </DataProvider>
+
+    <DataProvider name="Header">
+        <DataElement name="title" type="string"/>
+    </DataProvider>
+
+    <DataProvider name="Navigation">
+        <DataElement name="textLeft" type="string"/>
+        <DataElement name="menuTitle" type="string"/>
+        <DataElement name="navigationLinks" type="NavigationLink[]" singleton="NavigationLink"/>
+    </DataProvider>
+
+    <DataProvider name="NavigationLink">
+        <DataElement name="link" type="string"/>
+        <DataElement name="displayName" type="string"/>
+    </DataProvider>
+
+    <DataProvider name="MastHead">
+        <DataElement name="title" type="string"/>
+        <DataElement name="subTitle" type="string"/>
+        <DataElement name="link" type="string"/>
+        <DataElement name="buttonTitle" type="string"/>
+    </DataProvider>
+
+    <DataProvider name="Section">
+        <DataElement name="type" type="string"/>
+        <DataElement name="templateId" type="string"/>
+        <DataElement name="title" type="string"/>
+        <DataElement name="text" type="string"/>
+        <DataElement name="image" type="string"/>
+        <DataElement name="subSections" type="SubSection[]" singleton="SubSection"/>
+        <DataElement name="socialMediaLinks" type="SocialMediaLink[]" singleton="SocialMediaLink"/>
+        <DataElement name="placeHolder" type="string"/>
+        <DataElement name="buttonTitle" type="string"/>
+    </DataProvider>
+
+    <DataProvider name="SubSection">
+        <DataElement name="title" type="string"/>
+        <DataElement name="text" type="string"/>
+        <DataElement name="isLink" type="bool" default="false"/>
+        <DataElement name="image" type="string"/>
+        <DataElement name="imageAlignLeft" type="bool"/>
+        <DataElement name="icon" type="string"/>
+    </DataProvider>
+
+    <DataProvider name="SocialMediaLink">
+        <DataElement name="link" type="string"/>
+        <DataElement name="icon" type="string"/>
+    </DataProvider>
+</DataProviders>

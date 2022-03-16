@@ -1,0 +1,31 @@
+<section class="projects-section bg-light" id="{{ "projects" }}">
+    <div class="container px-4 px-lg-5">
+
+        <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+            <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="{{ section.image }}" alt="..." /></div>
+            <div class="col-xl-4 col-lg-5">
+                <div class="featured-text text-center text-lg-left">
+                    <h4>{{ section.title }}</h4>
+                    <p class="text-black-50 mb-0">{{ section.text }}</p>
+                </div>
+            </div>
+        </div>
+
+        {% for subSection in section.subSections %}
+            <div class="row gx-0 {% if subSection.imageAlignLeft %} mb-5 mb-lg-0 {% endif %} justify-content-center">
+                <div class="col-lg-6"><img class="img-fluid" src="{{ subSection.image }}" alt="..." /></div>
+                <div class="col-lg-6 {% if not subSection.imageAlignLeft %} order-lg-first {% endif %}">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center {% if subSection.imageAlignLeft %} text-lg-left {% else %} text-lg-right {% endif %}">
+                                <h4 class="text-white">{{ subSection.title }}</h4>
+                                <p class="mb-0 text-white-50">{{ subSection.text }}</p>
+                                <hr class="d-none d-lg-block mb-0 ms-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>

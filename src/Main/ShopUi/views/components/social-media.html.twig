@@ -1,0 +1,7 @@
+<section class="contact-section bg-black" id="{{ "social-media" }}">
+    <div class="social d-flex justify-content-center">
+        {% for socialMediaLink in section.socialMediaLinks %}
+            <a class="mx-2" href="{{ socialMediaLink.link }}"><i class="fab {{ socialMediaLink.icon }}"></i></a>
+        {% endfor %}
+    </div>
+</section>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include constant('App\\Shared\\Router\\RouterConstants::HEADER_ROUTE') %}
+
+    <body id="page-top">
+
+        {% include constant('App\\Shared\\Router\\RouterConstants::NAVIGATION_ROUTE') %}
+
+        {% include constant('App\\Shared\\Router\\RouterConstants::MAST_HEAD_ROUTE') %}
+
+        {% block content %}
+            {% for section in page.sections %}
+                {% if section.type == constant('App\\Shared\\PageSection\\PageSectionConstants::SECTION_1_TYPE') %}
+                    {% include constant('App\\Shared\\Router\\RouterConstants::SECTION_1_ROUTE') %}
+                {% endif %}
+
+                {% if section.type == constant('App\\Shared\\PageSection\\PageSectionConstants::SECTION_2_TYPE') %}
+                    {% include constant('App\\Shared\\Router\\RouterConstants::SECTION_2_ROUTE') %}
+                {% endif %}
+
+                {% if section.type == constant('App\\Shared\\PageSection\\PageSectionConstants::SECTION_NEWSLETTER_TYPE') %}
+                    {% include constant('App\\Shared\\Router\\RouterConstants::NEWSLETTER_ROUTE') %}
+                {% endif %}
+
+                {% if section.type == constant('App\\Shared\\PageSection\\PageSectionConstants::SECTION_CONTACT_TYPE') %}
+                    {% include constant('App\\Shared\\Router\\RouterConstants::CONTACT_ROUTE') %}
+                {% endif %}
+
+                {% if section.type == constant('App\\Shared\\PageSection\\PageSectionConstants::SECTION_SOCIAL_MEDIA_TYPE') %}
+                    {% include constant('App\\Shared\\Router\\RouterConstants::SOCIAL_MEDIA_ROUTE') %}
+                {% endif %}
+            {% endfor %}
+        {% endblock %}
+
+        {% include constant('App\\Shared\\Router\\RouterConstants::FOOTER_ROUTE') %}
+    </body>
+</html>
