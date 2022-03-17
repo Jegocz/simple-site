@@ -7,6 +7,9 @@ namespace App\Generated\DataTransferObjects;
  */
 final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\DataProvider\AbstractDataProvider implements \Xervice\DataProvider\Business\Model\DataProvider\DataProviderInterface
 {
+    /** @var int */
+    protected $position;
+
     /** @var string */
     protected $type;
 
@@ -33,6 +36,47 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
 
     /** @var string */
     protected $buttonTitle;
+
+
+    /**
+     * @return int
+     */
+    public function getPosition(): int
+    {
+        return $this->position;
+    }
+
+
+    /**
+     * @param int $position
+     * @return SectionDataProvider
+     */
+    public function setPosition(int $position)
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+
+    /**
+     * @return SectionDataProvider
+     */
+    public function unsetPosition()
+    {
+        $this->position = null;
+
+        return $this;
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function hasPosition()
+    {
+        return ($this->position !== null && $this->position !== []);
+    }
 
 
     /**
@@ -120,7 +164,7 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
     /**
      * @return string
      */
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->title;
     }
@@ -130,7 +174,7 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
      * @param string $title
      * @return SectionDataProvider
      */
-    public function setTitle(string $title)
+    public function setTitle(?string $title = null)
     {
         $this->title = $title;
 
@@ -161,7 +205,7 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
     /**
      * @return string
      */
-    public function getText(): string
+    public function getText(): ?string
     {
         return $this->text;
     }
@@ -171,7 +215,7 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
      * @param string $text
      * @return SectionDataProvider
      */
-    public function setText(string $text)
+    public function setText(?string $text = null)
     {
         $this->text = $text;
 
@@ -202,7 +246,7 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
     /**
      * @return string
      */
-    public function getImage(): string
+    public function getImage(): ?string
     {
         return $this->image;
     }
@@ -212,7 +256,7 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
      * @param string $image
      * @return SectionDataProvider
      */
-    public function setImage(string $image)
+    public function setImage(?string $image = null)
     {
         $this->image = $image;
 
@@ -345,7 +389,7 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
     /**
      * @return string
      */
-    public function getPlaceHolder(): string
+    public function getPlaceHolder(): ?string
     {
         return $this->placeHolder;
     }
@@ -355,7 +399,7 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
      * @param string $placeHolder
      * @return SectionDataProvider
      */
-    public function setPlaceHolder(string $placeHolder)
+    public function setPlaceHolder(?string $placeHolder = null)
     {
         $this->placeHolder = $placeHolder;
 
@@ -386,7 +430,7 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
     /**
      * @return string
      */
-    public function getButtonTitle(): string
+    public function getButtonTitle(): ?string
     {
         return $this->buttonTitle;
     }
@@ -396,7 +440,7 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
      * @param string $buttonTitle
      * @return SectionDataProvider
      */
-    public function setButtonTitle(string $buttonTitle)
+    public function setButtonTitle(?string $buttonTitle = null)
     {
         $this->buttonTitle = $buttonTitle;
 
@@ -430,6 +474,16 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
     protected function getElements(): array
     {
         return array (
+          'position' =>
+          array (
+            'name' => 'position',
+            'allownull' => false,
+            'default' => '',
+            'type' => 'int',
+            'is_collection' => false,
+            'is_dataprovider' => false,
+            'isCamelCase' => false,
+          ),
           'type' =>
           array (
             'name' => 'type',
@@ -453,7 +507,7 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
           'title' =>
           array (
             'name' => 'title',
-            'allownull' => false,
+            'allownull' => true,
             'default' => '',
             'type' => 'string',
             'is_collection' => false,
@@ -463,7 +517,7 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
           'text' =>
           array (
             'name' => 'text',
-            'allownull' => false,
+            'allownull' => true,
             'default' => '',
             'type' => 'string',
             'is_collection' => false,
@@ -473,7 +527,7 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
           'image' =>
           array (
             'name' => 'image',
-            'allownull' => false,
+            'allownull' => true,
             'default' => '',
             'type' => 'string',
             'is_collection' => false,
@@ -507,7 +561,7 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
           'placeHolder' =>
           array (
             'name' => 'placeHolder',
-            'allownull' => false,
+            'allownull' => true,
             'default' => '',
             'type' => 'string',
             'is_collection' => false,
@@ -517,7 +571,7 @@ final class SectionDataProvider extends \Xervice\DataProvider\Business\Model\Dat
           'buttonTitle' =>
           array (
             'name' => 'buttonTitle',
-            'allownull' => false,
+            'allownull' => true,
             'default' => '',
             'type' => 'string',
             'is_collection' => false,

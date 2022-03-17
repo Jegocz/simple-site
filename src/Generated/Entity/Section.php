@@ -24,7 +24,7 @@ class Section
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $title;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[ORM\Column(type: 'string', length: 500, nullable: true)]
     private $text;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
@@ -44,6 +44,9 @@ class Section
 
     #[ORM\ManyToMany(targetEntity: PageView::class, mappedBy: 'sections')]
     private $pageViews;
+
+    #[ORM\Column(type: 'integer')]
+    private $position;
 
     public function __construct()
     {
@@ -212,6 +215,18 @@ class Section
         if ($this->pageViews->removeElement($pageView)) {
             $pageView->removeSection($this);
         }
+
+        return $this;
+    }
+
+    public function getPosition(): ?int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(int $position): self
+    {
+        $this->position = $position;
 
         return $this;
     }

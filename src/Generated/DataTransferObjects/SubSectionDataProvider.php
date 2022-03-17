@@ -7,6 +7,9 @@ namespace App\Generated\DataTransferObjects;
  */
 final class SubSectionDataProvider extends \Xervice\DataProvider\Business\Model\DataProvider\AbstractDataProvider implements \Xervice\DataProvider\Business\Model\DataProvider\DataProviderInterface
 {
+    /** @var int */
+    protected $position;
+
     /** @var string */
     protected $title;
 
@@ -27,9 +30,50 @@ final class SubSectionDataProvider extends \Xervice\DataProvider\Business\Model\
 
 
     /**
+     * @return int
+     */
+    public function getPosition(): int
+    {
+        return $this->position;
+    }
+
+
+    /**
+     * @param int $position
+     * @return SubSectionDataProvider
+     */
+    public function setPosition(int $position)
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+
+    /**
+     * @return SubSectionDataProvider
+     */
+    public function unsetPosition()
+    {
+        $this->position = null;
+
+        return $this;
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function hasPosition()
+    {
+        return ($this->position !== null && $this->position !== []);
+    }
+
+
+    /**
      * @return string
      */
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->title;
     }
@@ -39,7 +83,7 @@ final class SubSectionDataProvider extends \Xervice\DataProvider\Business\Model\
      * @param string $title
      * @return SubSectionDataProvider
      */
-    public function setTitle(string $title)
+    public function setTitle(?string $title = null)
     {
         $this->title = $title;
 
@@ -70,7 +114,7 @@ final class SubSectionDataProvider extends \Xervice\DataProvider\Business\Model\
     /**
      * @return string
      */
-    public function getText(): string
+    public function getText(): ?string
     {
         return $this->text;
     }
@@ -80,7 +124,7 @@ final class SubSectionDataProvider extends \Xervice\DataProvider\Business\Model\
      * @param string $text
      * @return SubSectionDataProvider
      */
-    public function setText(string $text)
+    public function setText(?string $text = null)
     {
         $this->text = $text;
 
@@ -152,7 +196,7 @@ final class SubSectionDataProvider extends \Xervice\DataProvider\Business\Model\
     /**
      * @return string
      */
-    public function getImage(): string
+    public function getImage(): ?string
     {
         return $this->image;
     }
@@ -162,7 +206,7 @@ final class SubSectionDataProvider extends \Xervice\DataProvider\Business\Model\
      * @param string $image
      * @return SubSectionDataProvider
      */
-    public function setImage(string $image)
+    public function setImage(?string $image = null)
     {
         $this->image = $image;
 
@@ -234,7 +278,7 @@ final class SubSectionDataProvider extends \Xervice\DataProvider\Business\Model\
     /**
      * @return string
      */
-    public function getIcon(): string
+    public function getIcon(): ?string
     {
         return $this->icon;
     }
@@ -244,7 +288,7 @@ final class SubSectionDataProvider extends \Xervice\DataProvider\Business\Model\
      * @param string $icon
      * @return SubSectionDataProvider
      */
-    public function setIcon(string $icon)
+    public function setIcon(?string $icon = null)
     {
         $this->icon = $icon;
 
@@ -278,10 +322,20 @@ final class SubSectionDataProvider extends \Xervice\DataProvider\Business\Model\
     protected function getElements(): array
     {
         return array (
+          'position' =>
+          array (
+            'name' => 'position',
+            'allownull' => false,
+            'default' => '',
+            'type' => 'int',
+            'is_collection' => false,
+            'is_dataprovider' => false,
+            'isCamelCase' => false,
+          ),
           'title' =>
           array (
             'name' => 'title',
-            'allownull' => false,
+            'allownull' => true,
             'default' => '',
             'type' => 'string',
             'is_collection' => false,
@@ -291,7 +345,7 @@ final class SubSectionDataProvider extends \Xervice\DataProvider\Business\Model\
           'text' =>
           array (
             'name' => 'text',
-            'allownull' => false,
+            'allownull' => true,
             'default' => '',
             'type' => 'string',
             'is_collection' => false,
@@ -311,7 +365,7 @@ final class SubSectionDataProvider extends \Xervice\DataProvider\Business\Model\
           'image' =>
           array (
             'name' => 'image',
-            'allownull' => false,
+            'allownull' => true,
             'default' => '',
             'type' => 'string',
             'is_collection' => false,
@@ -331,7 +385,7 @@ final class SubSectionDataProvider extends \Xervice\DataProvider\Business\Model\
           'icon' =>
           array (
             'name' => 'icon',
-            'allownull' => false,
+            'allownull' => true,
             'default' => '',
             'type' => 'string',
             'is_collection' => false,

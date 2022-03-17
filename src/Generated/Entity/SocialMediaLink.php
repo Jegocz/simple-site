@@ -24,6 +24,9 @@ class SocialMediaLink
     #[ORM\ManyToMany(targetEntity: Section::class, mappedBy: 'socialMediaLinks')]
     private $sections;
 
+    #[ORM\Column(type: 'integer')]
+    private $position;
+
     public function __construct()
     {
         $this->sections = new ArrayCollection();
@@ -81,6 +84,18 @@ class SocialMediaLink
         if ($this->sections->removeElement($section)) {
             $section->removeSocialMediaLink($this);
         }
+
+        return $this;
+    }
+
+    public function getPosition(): ?int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(int $position): self
+    {
+        $this->position = $position;
 
         return $this;
     }

@@ -19,45 +19,49 @@
     </DataProvider>
 
     <DataProvider name="Navigation">
-        <DataElement name="textLeft" type="string"/>
+        <DataElement name="textLeft" type="string" allownull="true"/>
         <DataElement name="menuTitle" type="string"/>
         <DataElement name="navigationLinks" type="NavigationLink[]" singleton="NavigationLink"/>
     </DataProvider>
 
     <DataProvider name="NavigationLink">
+        <DataElement name="position" type="int"/>
         <DataElement name="link" type="string"/>
         <DataElement name="displayName" type="string"/>
     </DataProvider>
 
     <DataProvider name="MastHead">
-        <DataElement name="title" type="string"/>
-        <DataElement name="subTitle" type="string"/>
-        <DataElement name="link" type="string"/>
-        <DataElement name="buttonTitle" type="string"/>
+        <DataElement name="title" type="string" allownull="true"/>
+        <DataElement name="subTitle" type="string" allownull="true"/>
+        <DataElement name="link" type="string" allownull="true"/>
+        <DataElement name="buttonTitle" type="string" allownull="true"/>
     </DataProvider>
 
     <DataProvider name="Section">
+        <DataElement name="position" type="int"/>
         <DataElement name="type" type="string"/>
         <DataElement name="templateId" type="string"/>
-        <DataElement name="title" type="string"/>
-        <DataElement name="text" type="string"/>
-        <DataElement name="image" type="string"/>
+        <DataElement name="title" type="string" allownull="true"/>
+        <DataElement name="text" type="string" allownull="true"/>
+        <DataElement name="image" type="string" allownull="true"/>
         <DataElement name="subSections" type="SubSection[]" singleton="SubSection"/>
         <DataElement name="socialMediaLinks" type="SocialMediaLink[]" singleton="SocialMediaLink"/>
-        <DataElement name="placeHolder" type="string"/>
-        <DataElement name="buttonTitle" type="string"/>
+        <DataElement name="placeHolder" type="string" allownull="true"/>
+        <DataElement name="buttonTitle" type="string" allownull="true"/>
     </DataProvider>
 
     <DataProvider name="SubSection">
-        <DataElement name="title" type="string"/>
-        <DataElement name="text" type="string"/>
+        <DataElement name="position" type="int"/>
+        <DataElement name="title" type="string" allownull="true"/>
+        <DataElement name="text" type="string" allownull="true"/>
         <DataElement name="isLink" type="bool" default="false"/>
-        <DataElement name="image" type="string"/>
+        <DataElement name="image" type="string" allownull="true"/>
         <DataElement name="imageAlignLeft" type="bool"/>
-        <DataElement name="icon" type="string"/>
+        <DataElement name="icon" type="string" allownull="true"/>
     </DataProvider>
 
     <DataProvider name="SocialMediaLink">
+        <DataElement name="position" type="int"/>
         <DataElement name="link" type="string"/>
         <DataElement name="icon" type="string"/>
     </DataProvider>

@@ -7,11 +7,55 @@ namespace App\Generated\DataTransferObjects;
  */
 final class SocialMediaLinkDataProvider extends \Xervice\DataProvider\Business\Model\DataProvider\AbstractDataProvider implements \Xervice\DataProvider\Business\Model\DataProvider\DataProviderInterface
 {
+    /** @var int */
+    protected $position;
+
     /** @var string */
     protected $link;
 
     /** @var string */
     protected $icon;
+
+
+    /**
+     * @return int
+     */
+    public function getPosition(): int
+    {
+        return $this->position;
+    }
+
+
+    /**
+     * @param int $position
+     * @return SocialMediaLinkDataProvider
+     */
+    public function setPosition(int $position)
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+
+    /**
+     * @return SocialMediaLinkDataProvider
+     */
+    public function unsetPosition()
+    {
+        $this->position = null;
+
+        return $this;
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function hasPosition()
+    {
+        return ($this->position !== null && $this->position !== []);
+    }
 
 
     /**
@@ -102,6 +146,16 @@ final class SocialMediaLinkDataProvider extends \Xervice\DataProvider\Business\M
     protected function getElements(): array
     {
         return array (
+          'position' =>
+          array (
+            'name' => 'position',
+            'allownull' => false,
+            'default' => '',
+            'type' => 'int',
+            'is_collection' => false,
+            'is_dataprovider' => false,
+            'isCamelCase' => false,
+          ),
           'link' =>
           array (
             'name' => 'link',

@@ -4,18 +4,18 @@ namespace App\Admin\PageView\Business\Model;
 
 use App\Admin\PageView\Business\Exception\PageViewNotFoundException;
 use App\Admin\PageView\PageViewConfig;
-use App\Admin\PageView\Persistence\PageViewRepository;
+use App\Admin\PageView\Persistence\PageViewRepositoryInterface;
 use App\Generated\DataTransferObjects\PageViewDataProvider;
 
-class PageView
+class PageView implements PageViewInterface
 {
     /**
-     * @var \App\Admin\PageView\Persistence\PageViewRepository
+     * @var \App\Admin\PageView\Persistence\PageViewRepositoryInterface
      */
-    private PageViewRepository $pageViewRepository;
+    private PageViewRepositoryInterface $pageViewRepository;
 
     public function __construct(
-        PageViewRepository $pageViewRepository
+        PageViewRepositoryInterface $pageViewRepository
     ) {
         $this->pageViewRepository = $pageViewRepository;
     }

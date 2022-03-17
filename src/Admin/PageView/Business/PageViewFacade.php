@@ -2,20 +2,20 @@
 
 namespace App\Admin\PageView\Business;
 
-use App\Admin\PageView\Business\Model\PageView;
+use App\Admin\PageView\Business\Model\PageViewInterface;
 use App\Generated\DataTransferObjects\PageViewDataProvider;
 
-class PageViewFacade
+class PageViewFacade implements PageViewFacadeInterface
 {
     /**
-     * @var \App\Admin\PageView\Business\Model\PageView
+     * @var \App\Admin\PageView\Business\Model\PageViewInterface
      */
-    private PageView $pageView;
+    private PageViewInterface $pageView;
 
     /**
-     * @param \App\Admin\PageView\Business\Model\PageView $pageView
+     * @param \App\Admin\PageView\Business\Model\PageViewInterface $pageView
      */
-    public function __construct(PageView $pageView)
+    public function __construct(PageViewInterface $pageView)
     {
         $this->pageView = $pageView;
     }

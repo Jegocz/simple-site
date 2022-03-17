@@ -2,24 +2,24 @@
 
 namespace App\Admin\PageView\Persistence;
 
-use App\Admin\PageView\Persistence\Mapper\PageViewMapper;
+use App\Admin\PageView\Persistence\Mapper\PageViewMapperInterface;
 use App\Generated\DataTransferObjects\PageViewDataProvider;
 use Doctrine\Persistence\ManagerRegistry;
 
-class PageViewRepository extends \App\Generated\Repository\PageViewRepository
+class PageViewRepository extends \App\Generated\Repository\PageViewRepository implements PageViewRepositoryInterface
 {
     /**
-     * @var \App\Admin\PageView\Persistence\Mapper\PageViewMapper
+     * @var \App\Admin\PageView\Persistence\Mapper\PageViewMapperInterface
      */
-    private PageViewMapper $pageViewMapper;
+    private PageViewMapperInterface $pageViewMapper;
 
     /**
      * @param \Doctrine\Persistence\ManagerRegistry $registry
-     * @param \App\Admin\PageView\Persistence\Mapper\PageViewMapper $pageViewMapper
+     * @param \App\Admin\PageView\Persistence\Mapper\PageViewMapperInterface $pageViewMapper
      */
     public function __construct(
         ManagerRegistry $registry,
-        PageViewMapper $pageViewMapper,
+        PageViewMapperInterface $pageViewMapper,
     ) {
         parent::__construct($registry);
         $this->pageViewMapper = $pageViewMapper;

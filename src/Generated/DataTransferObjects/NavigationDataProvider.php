@@ -20,7 +20,7 @@ final class NavigationDataProvider extends \Xervice\DataProvider\Business\Model\
     /**
      * @return string
      */
-    public function getTextLeft(): string
+    public function getTextLeft(): ?string
     {
         return $this->textLeft;
     }
@@ -30,7 +30,7 @@ final class NavigationDataProvider extends \Xervice\DataProvider\Business\Model\
      * @param string $textLeft
      * @return NavigationDataProvider
      */
-    public function setTextLeft(string $textLeft)
+    public function setTextLeft(?string $textLeft = null)
     {
         $this->textLeft = $textLeft;
 
@@ -159,7 +159,7 @@ final class NavigationDataProvider extends \Xervice\DataProvider\Business\Model\
           'textLeft' =>
           array (
             'name' => 'textLeft',
-            'allownull' => false,
+            'allownull' => true,
             'default' => '',
             'type' => 'string',
             'is_collection' => false,

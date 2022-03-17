@@ -23,7 +23,7 @@ final class MastHeadDataProvider extends \Xervice\DataProvider\Business\Model\Da
     /**
      * @return string
      */
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->title;
     }
@@ -33,7 +33,7 @@ final class MastHeadDataProvider extends \Xervice\DataProvider\Business\Model\Da
      * @param string $title
      * @return MastHeadDataProvider
      */
-    public function setTitle(string $title)
+    public function setTitle(?string $title = null)
     {
         $this->title = $title;
 
@@ -64,7 +64,7 @@ final class MastHeadDataProvider extends \Xervice\DataProvider\Business\Model\Da
     /**
      * @return string
      */
-    public function getSubTitle(): string
+    public function getSubTitle(): ?string
     {
         return $this->subTitle;
     }
@@ -74,7 +74,7 @@ final class MastHeadDataProvider extends \Xervice\DataProvider\Business\Model\Da
      * @param string $subTitle
      * @return MastHeadDataProvider
      */
-    public function setSubTitle(string $subTitle)
+    public function setSubTitle(?string $subTitle = null)
     {
         $this->subTitle = $subTitle;
 
@@ -105,7 +105,7 @@ final class MastHeadDataProvider extends \Xervice\DataProvider\Business\Model\Da
     /**
      * @return string
      */
-    public function getLink(): string
+    public function getLink(): ?string
     {
         return $this->link;
     }
@@ -115,7 +115,7 @@ final class MastHeadDataProvider extends \Xervice\DataProvider\Business\Model\Da
      * @param string $link
      * @return MastHeadDataProvider
      */
-    public function setLink(string $link)
+    public function setLink(?string $link = null)
     {
         $this->link = $link;
 
@@ -146,7 +146,7 @@ final class MastHeadDataProvider extends \Xervice\DataProvider\Business\Model\Da
     /**
      * @return string
      */
-    public function getButtonTitle(): string
+    public function getButtonTitle(): ?string
     {
         return $this->buttonTitle;
     }
@@ -156,7 +156,7 @@ final class MastHeadDataProvider extends \Xervice\DataProvider\Business\Model\Da
      * @param string $buttonTitle
      * @return MastHeadDataProvider
      */
-    public function setButtonTitle(string $buttonTitle)
+    public function setButtonTitle(?string $buttonTitle = null)
     {
         $this->buttonTitle = $buttonTitle;
 
@@ -193,7 +193,7 @@ final class MastHeadDataProvider extends \Xervice\DataProvider\Business\Model\Da
           'title' =>
           array (
             'name' => 'title',
-            'allownull' => false,
+            'allownull' => true,
             'default' => '',
             'type' => 'string',
             'is_collection' => false,
@@ -203,7 +203,7 @@ final class MastHeadDataProvider extends \Xervice\DataProvider\Business\Model\Da
           'subTitle' =>
           array (
             'name' => 'subTitle',
-            'allownull' => false,
+            'allownull' => true,
             'default' => '',
             'type' => 'string',
             'is_collection' => false,
@@ -213,7 +213,7 @@ final class MastHeadDataProvider extends \Xervice\DataProvider\Business\Model\Da
           'link' =>
           array (
             'name' => 'link',
-            'allownull' => false,
+            'allownull' => true,
             'default' => '',
             'type' => 'string',
             'is_collection' => false,
@@ -223,7 +223,7 @@ final class MastHeadDataProvider extends \Xervice\DataProvider\Business\Model\Da
           'buttonTitle' =>
           array (
             'name' => 'buttonTitle',
-            'allownull' => false,
+            'allownull' => true,
             'default' => '',
             'type' => 'string',
             'is_collection' => false,

@@ -24,6 +24,9 @@ class NavigationLink
     #[ORM\ManyToMany(targetEntity: Navigation::class, mappedBy: 'navigationLinks')]
     private $navigations;
 
+    #[ORM\Column(type: 'integer')]
+    private $position;
+
     public function __construct()
     {
         $this->navigations = new ArrayCollection();
@@ -81,6 +84,18 @@ class NavigationLink
         if ($this->navigations->removeElement($navigation)) {
             $navigation->removeNavigationLink($this);
         }
+
+        return $this;
+    }
+
+    public function getPosition(): ?int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(int $position): self
+    {
+        $this->position = $position;
 
         return $this;
     }
